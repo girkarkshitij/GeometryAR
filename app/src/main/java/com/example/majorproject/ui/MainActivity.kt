@@ -3,7 +3,10 @@ package com.example.majorproject.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
+import com.example.majorproject.adapter.SolidItemAdapter
+import com.example.majorproject.daos.SolidDao
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
