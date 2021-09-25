@@ -8,4 +8,8 @@
     <string name="cuboid">Cuboid</string>
     <string name="cylinder">Cylinder</string>
     <string name="sphere">Sphere</string>
+    <string name="learn_geometry_with_ar">Learn Geometry with AR</string>
+    <string name="profile">Profile</string>
+    <string name="follow_us">Follow us</string>
+    <string name="rate_us">Rate us</string>
 </resources>
