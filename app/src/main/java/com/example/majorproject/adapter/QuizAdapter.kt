@@ -13,6 +13,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
 import com.example.majorproject.models.Quiz
+import com.example.majorproject.utils.ColorPicker
+import com.example.majorproject.utils.IconPicker
 
 class QuizAdapter(val context: Context, val quizzes: List<Quiz>) :
     RecyclerView.Adapter<QuizAdapter.QuizViewHolder>() {
@@ -24,8 +26,8 @@ class QuizAdapter(val context: Context, val quizzes: List<Quiz>) :
 
     override fun onBindViewHolder(holder: QuizViewHolder, position: Int) {
         holder.textViewTitle.text = quizzes[position].title
-//        holder.cardContainer.setCardBackgroundColor(Color.parseColor(ColorPicker.getColor()))
-//        holder.iconView.setImageResource(IconPicker.getIcon())
+        holder.cardContainer.setCardBackgroundColor(Color.parseColor(ColorPicker.getColor()))
+        holder.iconView.setImageResource(IconPicker.getIcon())
         holder.itemView.setOnClickListener {
             Toast.makeText(context, quizzes[position].title, Toast.LENGTH_SHORT).show()
 //            val intent = Intent(context, QuestionActivity::class.java)
