@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
+import com.example.majorproject.activities.QuestionActivity
 import com.example.majorproject.models.Quiz
 import com.example.majorproject.utils.ColorPicker
 import com.example.majorproject.utils.IconPicker
@@ -29,10 +30,9 @@ class QuizAdapter(val context: Context, val quizzes: List<Quiz>) :
         holder.cardContainer.setCardBackgroundColor(Color.parseColor(ColorPicker.getColor()))
         holder.iconView.setImageResource(IconPicker.getIcon())
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, quizzes[position].title, Toast.LENGTH_SHORT).show()
-//            val intent = Intent(context, QuestionActivity::class.java)
-//            intent.putExtra("DATE", quizzes[position].title)
-//            context.startActivity(intent)
+            val intent = Intent(context, QuestionActivity::class.java)
+            intent.putExtra("TITLE", quizzes[position].title)
+            context.startActivity(intent)
         }
     }
 

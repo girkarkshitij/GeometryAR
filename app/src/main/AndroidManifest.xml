@@ -8,8 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.QuizMenuActivity"></activity>
+        android:theme="@style/AppThemeNoActionBar">
+        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.QuizResultActivity" />
+        <activity
+            android:name=".activities.QuestionActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.QuizMenuActivity" />
         <activity android:name=".activities.StartLearningActivity" />
         <activity android:name=".activities.SignInActivity">
             <intent-filter>

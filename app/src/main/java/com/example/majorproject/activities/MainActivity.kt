@@ -34,8 +34,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpDrawerLayout(){
         setSupportActionBar(topAppBar)
-        actionBarDrawerToggler = ActionBarDrawerToggle(this, main_drawer, R.string.app_name, R.string.app_name)
+        actionBarDrawerToggler = ActionBarDrawerToggle(this, mainDrawer, R.string.app_name, R.string.app_name)
         actionBarDrawerToggler.syncState()
+        navigationView.setNavigationItemSelectedListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            mainDrawer.closeDrawers()
+            true
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
