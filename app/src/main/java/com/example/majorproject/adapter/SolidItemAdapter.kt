@@ -1,36 +1,43 @@
 package com.example.majorproject.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
+import com.example.majorproject.activities.QuestionActivity
+import com.example.majorproject.models.Quiz
 import com.example.majorproject.models.Solid
+import com.example.majorproject.utils.ColorPicker
+import com.example.majorproject.utils.IconPicker
 
-class SolidItemAdapter(private val context: Context, private val dataset: List<Solid>) :
+class SolidItemAdapter(val context: Context, private val dataset: List<Solid>) :
     RecyclerView.Adapter<SolidItemAdapter.SolidItemViewHolder>() {
-    class SolidItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.item_title)
-        val imageView: ImageView = view.findViewById(R.id.item_image)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SolidItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.solid_list_item, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.quiz_item, parent, false)
+        return SolidItemViewHolder(view)
+    }
 
-        return SolidItemViewHolder(adapterLayout)
+    override fun onBindViewHolder(holder: SolidItemViewHolder, position: Int) {
+        holder.textViewTitle.text = dataset[position].title
+        holder.cardContainer.setCardBackgroundColor(Color.parseColor(ColorPicker.getColor()))
+        holder.iconView.setImageResource(dataset[position].imageResourceId)
     }
 
     override fun getItemCount(): Int {
         return dataset.size
     }
 
-    override fun onBindViewHolder(holder: SolidItemViewHolder, position: Int) {
-        val item = dataset[position]
-        holder.textView.text =  context.resources.getString(item.stringResourceId)
-        holder.imageView.setImageResource(item.imageResourceId)
+    inner class SolidItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var textViewTitle: TextView = itemView.findViewById(R.id.quizTitle)
+        var iconView: ImageView = itemView.findViewById(R.id.quizIcon)
+        var cardContainer: CardView = itemView.findViewById(R.id.cardContainer)
     }
 }
