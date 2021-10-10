@@ -41,12 +41,14 @@ class QuizResultActivity : AppCompatActivity() {
 
     private fun calculateScore() {
         var score = 0
+        var questions = 0
         for (entry in quiz.questions.entries) {
             val question = entry.value
             if (question.answer == question.userAnswer) {
-                score += 10
+                score += 1
             }
+            questions++
         }
-        txtScore.text = "Your Score : $score"
+        txtScore.text = "Your Score : $score/$questions"
     }
 }
