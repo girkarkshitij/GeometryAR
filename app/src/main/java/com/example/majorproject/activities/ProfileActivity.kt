@@ -15,6 +15,7 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         firebaseAuth = FirebaseAuth.getInstance()
         txtEmail.text = firebaseAuth.currentUser?.email
+        txtDisplayName.text = firebaseAuth.currentUser?.displayName
 
         btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
