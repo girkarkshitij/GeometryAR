@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.majorproject.R
 import com.example.majorproject.daos.UserDao
 import com.example.majorproject.models.User
+import com.example.majorproject.ar.CameraPermissionHelper
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -52,6 +53,10 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        if (!CameraPermissionHelper.hasCameraPermission(this)) {
+            CameraPermissionHelper.requestCameraPermission(this)
+            return
+        }
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }
