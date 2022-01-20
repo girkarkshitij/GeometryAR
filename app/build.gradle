@@ -68,6 +68,20 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:1.1.2"
 
     // AR
-    implementation 'com.google.ar:core:1.29.0'
     implementation "com.google.ar.sceneform.ux:sceneform-ux:1.10.0"
 }
+
+sceneform.asset('sampledata/smalllamp/model.obj',
+        'default',
+        'sampledata/smalllamp/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('sampledata/model_two/LampPost.obj',
+        'default',
+        'sampledata/model_two/LampPost.sfa',
+        'src/main/assets/LampPost')
+
+sceneform.asset('sampledata/rocket/rocket.obj',
+        'default',
+        'sampledata/rocket/rocket.sfa',
+        'src/main/assets/rocket')

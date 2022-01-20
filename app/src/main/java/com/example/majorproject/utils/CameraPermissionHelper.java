@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.majorproject.ar;
+package com.example.majorproject.utils;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
