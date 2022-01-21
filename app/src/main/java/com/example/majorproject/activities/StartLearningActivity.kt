@@ -2,6 +2,7 @@ package com.example.majorproject.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
@@ -31,5 +32,8 @@ class StartLearningActivity : AppCompatActivity() {
         solidsMenuView.layoutManager = GridLayoutManager(this, 2)
         solidsMenuView.adapter = adapter
         solidsMenuView.setHasFixedSize(true)
+        adapter.onItemClick = {
+            Solid -> Log.d("CLICK", Solid.toString())
+        }
     }
 }
