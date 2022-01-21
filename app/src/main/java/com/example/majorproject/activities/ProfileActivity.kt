@@ -17,14 +17,9 @@ class ProfileActivity : AppCompatActivity() {
         txtEmail.text = firebaseAuth.currentUser?.email
         txtDisplayName.text = firebaseAuth.currentUser?.displayName
 
-//        btnLogout.setOnClickListener {
-//            FirebaseAuth.getInstance().signOut()
-//            val intent = Intent(this, SignInActivity::class.java)
-//            startActivity(intent)
-//        }
-
         btnLogout.setOnClickListener {
-            val intent = Intent(this, ArActivity::class.java)
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
     }

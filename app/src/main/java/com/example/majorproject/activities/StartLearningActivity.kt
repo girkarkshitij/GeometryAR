@@ -1,5 +1,6 @@
 package com.example.majorproject.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,6 +35,8 @@ class StartLearningActivity : AppCompatActivity() {
         solidsMenuView.setHasFixedSize(true)
         adapter.onItemClick = {
             Solid -> Log.d("CLICK", Solid.toString())
+            val intent = Intent(this, ArActivity::class.java)
+            startActivity(intent)
         }
     }
 }
