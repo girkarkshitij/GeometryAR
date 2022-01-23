@@ -43,6 +43,14 @@
             android:contentDescription="@string/cube"
             />
 
+        <ImageView
+            android:id="@+id/cone"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:src="@drawable/cone"
+            android:contentDescription="@string/cone"
+            />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdkVersion 24
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled = true
@@ -69,6 +69,7 @@ dependencies {
 
     // AR
     implementation "com.google.ar.sceneform.ux:sceneform-ux:1.10.0"
+    implementation 'com.google.ar:core:1.29.0'
 }
 
 sceneform.asset('sampledata/smalllamp/model.obj',
@@ -85,3 +86,13 @@ sceneform.asset('sampledata/rocket/rocket.obj',
         'default',
         'sampledata/rocket/rocket.sfa',
         'src/main/assets/rocket')
+
+sceneform.asset('sampledata/cube/cube.obj',
+        'default',
+        'sampledata/cube/cube.sfa',
+        'src/main/assets/cube')
+
+sceneform.asset('sampledata/cone/cone.obj',
+        'default',
+        'sampledata/cone/cone.sfa',
+        'src/main/assets/cone')

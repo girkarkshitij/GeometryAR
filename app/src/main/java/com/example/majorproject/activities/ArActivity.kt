@@ -1,7 +1,9 @@
 package com.example.majorproject.activities
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.majorproject.R
@@ -18,15 +20,28 @@ class ArActivity : AppCompatActivity() {
     private lateinit var arFragment: ArFragment
     private lateinit var selectedObject: Uri
 
+    private var toastflag: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ar)
+
+        val text: String? = intent.getStringExtra("name")
+        //TODO: Load the solid whose name is passed
+
+        if(!toastflag){
+            Toast.makeText(applicationContext, text, Toast.LENGTH_LONG).show()
+            if (text != null) {
+                Log.d("QWER", text)
+            }
+            toastflag = true
+        }
 
         //Init Fragment
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment_view) as ArFragment
 
         //Default model
-        setModelPath("rocket.sfb")
+        setModelPath("LampPost.sfb")
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->
             //If surface is not horizontal and upward facing
@@ -39,12 +54,15 @@ class ArActivity : AppCompatActivity() {
             placeObject(arFragment, anchor, selectedObject)
         }
 
-        //Click listener for lamp and table objects
+        //Click listener
         smallTable.setOnClickListener {
-            setModelPath("model.sfb")
+            setModelPath("cone.sfb")
         }
         bigLamp.setOnClickListener {
             setModelPath("LampPost.sfb")
+        }
+        cone.setOnClickListener {
+            setModelPath("cone.sfb")
         }
 
     }

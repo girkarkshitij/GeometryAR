@@ -36,6 +36,9 @@ class StartLearningActivity : AppCompatActivity() {
         adapter.onItemClick = {
             Solid -> Log.d("CLICK", Solid.toString())
             val intent = Intent(this, ArActivity::class.java)
+
+            //TODO: pass the name of solid to render
+            intent.putExtra("name", Solid.title)
             startActivity(intent)
         }
     }
