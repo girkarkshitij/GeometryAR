@@ -33,8 +33,7 @@ class ArActivity : AppCompatActivity() {
         //Init Fragment
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment_view) as ArFragment
 
-        //Default model
-        setModelPath("cuboid.sfb")
+
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->
             //If surface is not horizontal and upward facing
@@ -44,18 +43,21 @@ class ArActivity : AppCompatActivity() {
             }
             //create a new anchor
             val anchor = hitResult.createAnchor()
+            //Default model
+            setModelPath("$nameOfSolid.sfb")
+
             placeObject(arFragment, anchor, selectedObject)
         }
 
         //Click listener
         smallTable.setOnClickListener {
-            setModelPath("cuboid.sfb")
+            setModelPath("$nameOfSolid.sfb")
         }
         bigLamp.setOnClickListener {
-            setModelPath("cuboid.sfb")
+            setModelPath("$nameOfSolid.sfb")
         }
         cone.setOnClickListener {
-            setModelPath("cuboid.sfb")
+            setModelPath("$nameOfSolid.sfb")
         }
 
     }

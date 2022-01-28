@@ -91,3 +91,8 @@ sceneform.asset('sampledata/cylinder/cylinder.obj',
         'default',
         'sampledata/cylinder/cylinder.sfa',
         'src/main/assets/cylinder')
+
+sceneform.asset('sampledata/sphere/sphere.obj',
+        'default',
+        'sampledata/sphere/sphere.sfa',
+        'src/main/assets/sphere')
