@@ -20,28 +20,21 @@ class ArActivity : AppCompatActivity() {
     private lateinit var arFragment: ArFragment
     private lateinit var selectedObject: Uri
 
-    private var toastflag: Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ar)
 
-        val text: String? = intent.getStringExtra("name")
+        val nameOfSolid: String? = intent.getStringExtra("name")
         //TODO: Load the solid whose name is passed
-
-        if(!toastflag){
-            Toast.makeText(applicationContext, text, Toast.LENGTH_LONG).show()
-            if (text != null) {
-                Log.d("QWER", text)
-            }
-            toastflag = true
+        if (nameOfSolid != null) {
+            Log.d("SOLID", nameOfSolid)
         }
 
         //Init Fragment
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment_view) as ArFragment
 
         //Default model
-        setModelPath("LampPost.sfb")
+        setModelPath("cuboid.sfb")
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->
             //If surface is not horizontal and upward facing
@@ -56,13 +49,13 @@ class ArActivity : AppCompatActivity() {
 
         //Click listener
         smallTable.setOnClickListener {
-            setModelPath("cone.sfb")
+            setModelPath("cuboid.sfb")
         }
         bigLamp.setOnClickListener {
-            setModelPath("LampPost.sfb")
+            setModelPath("cuboid.sfb")
         }
         cone.setOnClickListener {
-            setModelPath("cone.sfb")
+            setModelPath("cuboid.sfb")
         }
 
     }

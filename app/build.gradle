@@ -72,21 +72,6 @@ dependencies {
     implementation 'com.google.ar:core:1.29.0'
 }
 
-sceneform.asset('sampledata/smalllamp/model.obj',
-        'default',
-        'sampledata/smalllamp/model.sfa',
-        'src/main/assets/model')
-
-sceneform.asset('sampledata/model_two/LampPost.obj',
-        'default',
-        'sampledata/model_two/LampPost.sfa',
-        'src/main/assets/LampPost')
-
-sceneform.asset('sampledata/rocket/rocket.obj',
-        'default',
-        'sampledata/rocket/rocket.sfa',
-        'src/main/assets/rocket')
-
 sceneform.asset('sampledata/cube/cube.obj',
         'default',
         'sampledata/cube/cube.sfa',
@@ -96,3 +81,13 @@ sceneform.asset('sampledata/cone/cone.obj',
         'default',
         'sampledata/cone/cone.sfa',
         'src/main/assets/cone')
+
+sceneform.asset('sampledata/cuboid/cuboid.obj',
+        'default',
+        'sampledata/cuboid/cuboid.sfa',
+        'src/main/assets/cuboid')
+
+sceneform.asset('sampledata/cylinder/cylinder.obj',
+        'default',
+        'sampledata/cylinder/cylinder.sfa',
+        'src/main/assets/cylinder')
