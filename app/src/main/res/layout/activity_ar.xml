@@ -27,29 +27,13 @@
         app:layout_constraintVertical_chainStyle="spread"
         app:layout_constraintVertical_weight="1">
 
-        <ImageView
-            android:id="@+id/bigLamp"
+        <Button
+            android:id="@+id/loadSolid"
             android:layout_height="60dp"
-            android:layout_width="60dp"
-            android:src="@drawable/cone"
-            android:contentDescription="@string/cone"
-            />
+            android:layout_width="120dp"
+            android:text="@string/load_the_solid" />
 
-        <ImageView
-            android:id="@+id/smallTable"
-            android:layout_height="60dp"
-            android:layout_width="60dp"
-            android:src="@drawable/cube"
-            android:contentDescription="@string/cube"
-            />
 
-        <ImageView
-            android:id="@+id/cone"
-            android:layout_height="60dp"
-            android:layout_width="60dp"
-            android:src="@drawable/cone"
-            android:contentDescription="@string/cone"
-            />
 
 
     </LinearLayout>

@@ -43,23 +43,16 @@ class ArActivity : AppCompatActivity() {
             }
             //create a new anchor
             val anchor = hitResult.createAnchor()
-            //Default model
+
             setModelPath("$nameOfSolid.sfb")
 
             placeObject(arFragment, anchor, selectedObject)
         }
 
         //Click listener
-        smallTable.setOnClickListener {
+        loadSolid.setOnClickListener {
             setModelPath("$nameOfSolid.sfb")
         }
-        bigLamp.setOnClickListener {
-            setModelPath("$nameOfSolid.sfb")
-        }
-        cone.setOnClickListener {
-            setModelPath("$nameOfSolid.sfb")
-        }
-
     }
 
     /***
