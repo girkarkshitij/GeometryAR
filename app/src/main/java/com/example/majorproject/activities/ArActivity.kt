@@ -25,7 +25,7 @@ class ArActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ar)
 
         val nameOfSolid: String? = intent.getStringExtra("name")
-        //TODO: Load the solid whose name is passed
+
         if (nameOfSolid != null) {
             Log.d("SOLID", nameOfSolid)
         }

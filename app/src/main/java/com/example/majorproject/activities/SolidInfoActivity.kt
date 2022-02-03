@@ -1,5 +1,6 @@
 package com.example.majorproject.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -13,16 +14,18 @@ class SolidInfoActivity : AppCompatActivity() {
 
     var solidInfoList : MutableList<SolidInfo>? = null
     var information: SolidInfo? = null
+    var title: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solid_info)
         setUpFireStore()
+        setUpEventListener()
     }
 
     private fun setUpFireStore() {
         firestore = FirebaseFirestore.getInstance()
-        val title: String? = intent.getStringExtra("name")
+        title = intent.getStringExtra("name")
         if (title != null) {
             firestore.collection("solids").whereEqualTo("title", title)
                 .get()
@@ -34,6 +37,14 @@ class SolidInfoActivity : AppCompatActivity() {
                         bindViews()
                     }
                 }
+        }
+    }
+
+    private fun setUpEventListener() {
+        loadSolid.setOnClickListener {
+            val intent = Intent(this, ArActivity::class.java)
+            intent.putExtra("name", title)
+            startActivity(intent)
         }
     }
 
