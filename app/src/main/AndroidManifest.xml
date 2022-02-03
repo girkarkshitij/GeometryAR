@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
+        <activity android:name=".activities.SolidInfoActivity"></activity>
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.QuizResultActivity" />
         <activity
