@@ -2,7 +2,6 @@ package com.example.majorproject.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.majorproject.R
 import com.example.majorproject.models.SolidInfo
@@ -33,7 +32,6 @@ class SolidInfoActivity : AppCompatActivity() {
                     if (it != null && !it.isEmpty) {
                         solidInfoList = it.toObjects(SolidInfo::class.java)
                         information = solidInfoList!![0]
-                        Log.d("SOLIDINFO", information.toString())
                         bindViews()
                     }
                 }

@@ -1,9 +1,7 @@
 package com.example.majorproject.activities
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.majorproject.R
@@ -26,13 +24,8 @@ class ArActivity : AppCompatActivity() {
 
         val nameOfSolid: String? = intent.getStringExtra("name")
 
-        if (nameOfSolid != null) {
-            Log.d("SOLID", nameOfSolid)
-        }
-
         //Init Fragment
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment_view) as ArFragment
-
 
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->

@@ -2,13 +2,11 @@ package com.example.majorproject.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.majorproject.R
 import com.example.majorproject.adapter.OptionAdapter
-import com.example.majorproject.adapter.QuizAdapter
 import com.example.majorproject.models.Question
 import com.example.majorproject.models.Quiz
 import com.google.firebase.firestore.FirebaseFirestore
@@ -40,7 +38,6 @@ class QuestionActivity : AppCompatActivity() {
         }
 
         btnSubmit.setOnClickListener {
-            Log.d("FINALQUIZ", questions.toString())
             val intent = Intent(this, QuizResultActivity::class.java)
             val json  = Gson().toJson(quizzes!![0])
             intent.putExtra("QUIZ", json)

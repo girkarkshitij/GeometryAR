@@ -2,7 +2,6 @@ package com.example.majorproject.daos
 
 import com.example.majorproject.models.User
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
