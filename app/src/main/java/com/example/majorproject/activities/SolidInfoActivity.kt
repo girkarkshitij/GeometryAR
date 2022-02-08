@@ -48,7 +48,7 @@ class SolidInfoActivity : AppCompatActivity() {
 
     private fun bindViews() {
         information?.let {
-            solidImage.setImageResource(resources.getIdentifier(it.title, "drawable", packageName))
+            solidImage.setImageResource(resources.getIdentifier(it.title+"info", "drawable", packageName))
             solid_name.text = it.title.toUpperCase()
             textView.text = "Number of Edges: " + it.numberOfEdges
             textView2.text = "Number of Faces: " + it.numberOfFaces
