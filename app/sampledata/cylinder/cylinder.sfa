@@ -63,7 +63,7 @@
     file: 'sampledata/cylinder/cylinder.obj',
     name: 'cylinder',
     recenter: 'root',
-    scale: 0.50317299999999998,
+    scale: 0.2,
   },
   version: '0.54:2',
 }

@@ -89,7 +89,7 @@
     file: 'sampledata/cube/cube.obj',
     name: 'cube',
     recenter: 'root',
-    scale: 0.5,
+    scale: 0.2,
   },
   version: '0.54:2',
 }
