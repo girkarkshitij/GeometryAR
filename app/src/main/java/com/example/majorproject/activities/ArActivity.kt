@@ -1,9 +1,7 @@
 package com.example.majorproject.activities
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.majorproject.R
@@ -25,14 +23,9 @@ class ArActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ar)
 
         val nameOfSolid: String? = intent.getStringExtra("name")
-        //TODO: Load the solid whose name is passed
-        if (nameOfSolid != null) {
-            Log.d("SOLID", nameOfSolid)
-        }
 
         //Init Fragment
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment_view) as ArFragment
-
 
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->

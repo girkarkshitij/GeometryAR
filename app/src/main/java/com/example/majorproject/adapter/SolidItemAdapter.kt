@@ -1,9 +1,7 @@
 package com.example.majorproject.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +10,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
-import com.example.majorproject.activities.QuestionActivity
-import com.example.majorproject.models.Quiz
 import com.example.majorproject.models.Solid
 import com.example.majorproject.utils.ColorPicker
-import com.example.majorproject.utils.IconPicker
 
 class SolidItemAdapter(val context: Context, private val dataset: List<Solid>) :
     RecyclerView.Adapter<SolidItemAdapter.SolidItemViewHolder>() {

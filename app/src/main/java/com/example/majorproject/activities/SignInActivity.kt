@@ -79,7 +79,6 @@ class SignInActivity : AppCompatActivity() {
         try {
             val account =
                 completedTask.getResult(ApiException::class.java)!!
-            Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
             firebaseAuthWithGoogle(account.idToken!!)
         } catch (e: ApiException) {
             Log.w(TAG, "signInResult:failed code=" + e.statusCode)

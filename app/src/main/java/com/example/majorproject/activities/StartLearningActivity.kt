@@ -1,16 +1,13 @@
 package com.example.majorproject.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.majorproject.R
 import com.example.majorproject.adapter.SolidItemAdapter
 import com.example.majorproject.daos.SolidDao
 import com.example.majorproject.models.Solid
-import kotlinx.android.synthetic.main.activity_quiz_menu.*
 import kotlinx.android.synthetic.main.activity_start_learning.*
 
 class StartLearningActivity : AppCompatActivity() {
@@ -34,10 +31,8 @@ class StartLearningActivity : AppCompatActivity() {
         solidsMenuView.adapter = adapter
         solidsMenuView.setHasFixedSize(true)
         adapter.onItemClick = {
-            Solid -> Log.d("CLICK", Solid.toString())
-            val intent = Intent(this, ArActivity::class.java)
-
-            //TODO: pass the name of solid to render
+            Solid ->
+            val intent = Intent(this, SolidInfoActivity::class.java)
             intent.putExtra("name", Solid.title)
             startActivity(intent)
         }
