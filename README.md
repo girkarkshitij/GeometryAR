@@ -1,1 +1,1 @@
-# Learn Solid Geometry with AR
+# Learn Solid Geometry with Augmented Reality
